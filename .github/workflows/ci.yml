@@ -12,6 +12,9 @@ jobs:
         run: |
           echo "테스트 가동"
           # 의도적 실패 유발 시: exit 1
+          npm install
+          npm run build
+          tar -cvf build.tar ./dist
 
   deploy-stage:
     runs-on: ubuntu-latest
